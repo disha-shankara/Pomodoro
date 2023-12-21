@@ -14,29 +14,27 @@
 	const min = document.getElementById("timer");
 	const focusMinutes = 1;
 	// converting minutes into seconds
-	let time = 5;
-	var CountDown = setInterval(function displayTimer()
-	 {
-		if (time == 0);
+	let time = 10;
+	var CountDown = setInterval(function displayTimer() {
+
+		//getting mins from the total_seconds(time) - Calculating every second
+		const minute = Math.floor(time / 60);
+
+		//modulus of 60
+		let seconds = time % 60;
+		if (seconds < 10)
 		{
-			//getting mins from the total_seconds(time) - Calculating every second
-			const minute = Math.floor(time / 60);
-
-			//modulus of 60
-			let seconds = time % 60;
-			if (seconds < 10)
-			{
-				seconds = '0' + seconds;
-			}
-
-			timer.innerHTML = minute + ":" + seconds;
-			time--;
-
+			seconds = '0' + seconds;
 		}
 
-	}, 1000);
+		if ((seconds < 00) && (minute < 0))
+		{
+			timer.innerHTML= "DONE"
+		}
 
-
+		timer.innerHTML = minute + ":" + seconds;
+		time--;
+		}, 1000);
 
 
 	</script>
