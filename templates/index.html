@@ -15,11 +15,7 @@
 	const focusMinutes = 1;
 	// converting minutes into seconds
 	let time = 10;
-	var CountDown = setInterval( displayTimer(), 1000);
-
-	function displayTimer() {
-
-
+	var CountDown = setInterval(function displayTimer() {
 		//getting mins from the total_seconds(time) - Calculating every second
 		const minute = Math.floor(time / 60);
 
@@ -32,11 +28,16 @@
 
 		timer.innerHTML = minute + ":" + seconds;
 		time--;
-		}
 
-		if (time < 0){
-			clearInterval(CountDown)
+		if (time < 0)
+		{
+			clearInterval(CountDown);
 		}
+		}, 1000);
+
+
+
+
 	</script>
 
 {% endblock %}
