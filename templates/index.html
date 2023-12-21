@@ -15,29 +15,24 @@
 	const focusMinutes = 1;
 	// converting minutes into seconds
 	let time = (60 * focusMinutes);
-	var CountDown = setInterval(function displayTimer() {
-		if (time == 0); {
-			
-		}
-		//getting mins from the total_seconds(time) - Calculating every second
-		const minute = Math.floor(time / 60);
-
-		//modulus of 60
-		let seconds = time % 60;
-		if (seconds < 10)
-		{
-			seconds = '0' + seconds;
-		}
-
-		timer.innerHTML = minute + ":" + seconds;
-		time--;
-
+	var CountDown = setInterval(function displayTimer()
+	 {
 		if (time == 0);
 		{
-			clearInterval();
+			//getting mins from the total_seconds(time) - Calculating every second
+			const minute = Math.floor(time / 60);
 
-		}
-		}, 1000);
+			//modulus of 60
+			let seconds = time % 60;
+			if (seconds < 10)
+			{
+				seconds = '0' + seconds;
+			}
+
+			timer.innerHTML = minute + ":" + seconds;
+			time--;
+
+		}}, 1000);
 
 
 	</script>
