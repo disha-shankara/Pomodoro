@@ -68,9 +68,16 @@
 
 .timer{
 	font-family: strengthen;
-	font-size:100px;
+	font-size:150px;
 	position: absolute;
-	left: 43%;
-	top: 43%;
+	left: 38%;
+	top: 38%;
+}
+
+.message
+{
+	font-family: strengthen;
+	font-size: 50px;
+
 
 }

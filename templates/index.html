@@ -5,7 +5,7 @@
 {% block main %}
 <p id = "demo"></p>
 <p id = "timer"class ="timer"></p>
-<p id = "message"></p>
+<p id = "message" class = "message"></p>
 
 
 {% endblock %}
@@ -13,9 +13,9 @@
 {% block javascript %}
 <script>
 	const timer = document.getElementById("timer");
-	const focusMinutes = 1;
+	const focusMinutes = 5;
 	// converting minutes into seconds
-	let time = 60 * focusMinutes;
+	let time =  focusMinutes;
 	var CountDown = setInterval(function displayTimer() {
 		//getting mins from the total_seconds(time) - Calculating every second
 		const minute = Math.floor(time / 60);
