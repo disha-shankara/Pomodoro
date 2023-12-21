@@ -14,12 +14,10 @@
 	const min = document.getElementById("timer");
 	const focusMinutes = 1;
 	// converting minutes into seconds
-	let time = (60 * focusMinutes);
-
-	if (min === "0:00");
-	{
-		alert("hello");
-		var CountDown = setInterval(function displayTimer()
+	let time = 5;
+	var CountDown = setInterval(function displayTimer()
+	 {
+		if (time == 0);
 		{
 			//getting mins from the total_seconds(time) - Calculating every second
 			const minute = Math.floor(time / 60);
@@ -34,8 +32,10 @@
 			timer.innerHTML = minute + ":" + seconds;
 			time--;
 
-		}, 1000);
-	}
+		}
+
+	}, 1000);
+
 
 
 
