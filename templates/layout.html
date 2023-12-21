@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title> Pomodoro: {% block title %} {% endblock %}</title>
+    <script src = "https://cdn.tailwindcss.com"></script>
+
+    <link href="../static/styles.css" rel="stylesheet">
+  </head>
+
+  
+  <body class = "bg-gradient-to-t from-[#abeff5] to-[#094A98] h-screen">
+
+    <header class="bg-white flow-root">
+      <nav class="relative justify-between">
+        <a href="#">
+          <h1 class="brand w-16 float-left">Pomodoro</h1>
+        </a>
+
+        <ul class = "float-right flex md:flex md:flex-grow flex-row justify-end gap-[4vw]">
+          <li>
+            <a href="#" class="fontie">Profile</a> 
+          </li>
+
+          <li>
+            <a href="#" class="fontie">Music</a> 
+          </li>
+
+          <li>
+            <a href="#" class="fontie"><img src = "../static/images/setting.png"></a> 
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+	<main>
+		{% block main %}
+
+        {% endblock %}
+	</main>
+  </body>
+  {% block javascript %}
+
+  {% endblock %}
+</html>

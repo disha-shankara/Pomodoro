@@ -1,38 +1,42 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Pomodoro</title>
-    <script src = "https://cdn.tailwindcss.com"></script>
+{% extends "layout.html" %}
 
-    <link href="../static/styles.css" rel="stylesheet">
-  </head>
-  <body class = "bg-gradient-to-t from-[#abeff5] to-[#094A98] h-screen">
+{% block title %}Index{% endblock %}
 
-    <header class="bg-white">
-      <nav class="">
-        <div>
-          
-          <a href="#">
-            <h1 class="brand">Pomodoro</h1>
-          </a>
+{% block main %}
+<p id = "demo"></p>
+<p id = "timer"class ="timer"></p>
 
-          <ul>
-            <li>
-              <a href="#">Profile</a> 
-            </li>
 
-            <li>
-              <a href="#">Music</a> 
-            </li>
+{% endblock %}
 
-            <li>
-              <a href="#">Settings</a> 
-            </li>
-          </ul>
-        </div>
-      </nav>
-    </header>
-  </body>
-</html>
+{% block javascript %}
+<script>
+	const min = document.getElementById("timer");
+	const focusMinutes = 1;
+	// converting minutes into seconds
+	let time = (60 * focusMinutes);
+	setInterval(function displayTimer() {
+
+		//getting mins from the total_seconds(time) - Calculating every second
+		const minute = Math.floor(time / 60);
+
+		//modulus of 60
+		let seconds = time % 60;
+		if (seconds < 10)
+		{
+			seconds = '0' + seconds;
+		}
+
+		timer.innerHTML = minute + ":" + seconds;
+		time--;
+		}, 1000);
+
+		if (min == '0:00')
+		{
+			alert("done")
+		}
+
+
+	</script>
+
+{% endblock %}
