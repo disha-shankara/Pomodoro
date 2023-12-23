@@ -3,8 +3,9 @@
 {% block title %}Index{% endblock %}
 
 {% block main %}
-<p id = "demo"></p>
-<p id = "timer"class ="timer">0:05</p>
+<div>
+	<p id = "timer"class ="timer">0:05</p>
+</div>
 <p id = "message" class = "message"></p>
 <button id = "start" class ="button-74" role ="button" style="position: absolute; top: 70%; left:38%;" >START</button>
 <button id = "stop" class ="button-74" role ="button" style= "position: absolute; top: 70%; left:53%;">STOP</button>
@@ -17,10 +18,9 @@
 	var start = document.getElementById("start");
 	const timer = document.getElementById("timer");
 	const focusMinutes = 5;
+	
 	start.addEventListener("click",
 	function() {
-
-
 		// converting minutes into seconds
 		let time =  focusMinutes;
 		var CountDown = setInterval(function displayTimer() {
@@ -45,6 +45,11 @@
 			}, 1000);
 	})
 
+	//TODO: reset the timer after asking for confirmation
+	var stop = document.getElementById("stop")
+	stop.addEventListener("click", function() {
+
+	})
 
 	</script>
 
