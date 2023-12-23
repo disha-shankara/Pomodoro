@@ -6,7 +6,7 @@
 <p id = "demo"></p>
 <p id = "timer"class ="timer"></p>
 <p id = "message" class = "message"></p>
-<button>STOP</button>
+<button type = "button">STOP</button>
 
 {% endblock %}
 
@@ -35,6 +35,8 @@
 			document.getElementById("message").innerHTML = "done";
 			clearInterval(CountDown);
 		}
+
+		if document.onclick
 		}, 1000);
 
 
