@@ -6,7 +6,7 @@
 <p id = "demo"></p>
 <p id = "timer"class ="timer"></p>
 <p id = "message" class = "message"></p>
-<button type = "submit" onclick = "stop()">STOP</button>
+<button type = "submit" id = "stop">STOP</button>
 
 {% endblock %}
 
@@ -30,13 +30,15 @@
 		timer.innerHTML = minute + ":" + seconds;
 		time--;
 
-		var stop = document.getElementById
+		var stop = document.getElementById("stop")
 
 		if (time < 0)
 		{
 			document.getElementById("message").innerHTML = "done";
 			clearInterval(CountDown);
 		}
+
+		stop.addEventListener("click", clearInterval(Countdown));
 		}, 1000);
 
 	</script>
