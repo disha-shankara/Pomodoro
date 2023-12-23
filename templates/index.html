@@ -15,30 +15,36 @@
 <script>
 
 	var start = document.getElementById("start");
-	const timer = document.getElementById("timer");
-	const focusMinutes = 5;
-	// converting minutes into seconds
-	let time =  focusMinutes;
-	var CountDown = setInterval(function displayTimer() {
-		//getting mins from the total_seconds(time) - Calculating every second
-		const minute = Math.floor(time / 60);
+	start.addEventListener("click",
+	function() {
 
-		//modulus of 60
-		let seconds = time % 60;
-		if (seconds < 10)
-		{
-			seconds = '0' + seconds;
-		}
+		const timer = document.getElementById("timer");
+		const focusMinutes = 5;
+		// converting minutes into seconds
+		let time =  focusMinutes;
+		var CountDown = setInterval(function displayTimer() {
+			//getting mins from the total_seconds(time) - Calculating every second
+			const minute = Math.floor(time / 60);
 
-		timer.innerHTML = minute + ":" + seconds;
-		time--;
+			//modulus of 60
+			let seconds = time % 60;
+			if (seconds < 10)
+			{
+				seconds = '0' + seconds;
+			}
 
-		if (time < 0)
-		{
-			document.getElementById("message").innerHTML = "done";
-			clearInterval(CountDown);
-		}
-		}, 1000);
+			timer.innerHTML = minute + ":" + seconds;
+			time--;
+
+			if (time < 0)
+			{
+				document.getElementById("message").innerHTML = "done";
+				clearInterval(CountDown);
+			}
+			}, 1000);
+
+	})
+
 
 	</script>
 
