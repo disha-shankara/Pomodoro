@@ -4,7 +4,7 @@
 
 {% block main %}
 <p id = "demo"></p>
-<p id = "timer"class ="timer"></p>
+<p id = "timer"class ="timer">0:05</p>
 <p id = "message" class = "message"></p>
 <button id = "start" class ="button-74" role ="button" style="position: absolute; top: 70%; left:38%;" >START</button>
 <button id = "stop" class ="button-74" role ="button" style= "position: absolute; top: 70%; left:53%;">STOP</button>
@@ -15,11 +15,12 @@
 <script>
 
 	var start = document.getElementById("start");
+	const timer = document.getElementById("timer");
+	const focusMinutes = 5;
 	start.addEventListener("click",
 	function() {
 
-		const timer = document.getElementById("timer");
-		const focusMinutes = 5;
+
 		// converting minutes into seconds
 		let time =  focusMinutes;
 		var CountDown = setInterval(function displayTimer() {
@@ -42,7 +43,6 @@
 				clearInterval(CountDown);
 			}
 			}, 1000);
-
 	})
 
 
