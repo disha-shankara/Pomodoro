@@ -8,7 +8,18 @@
 </div>
 <p id = "message" class = "message"></p>
 <button id = "start" class ="button-74" role ="button" style="position: absolute; top: 70%; left:38%;" >START</button>
-<button id = "stop" class ="button-74" role ="button" style= "position: absolute; top: 70%; left:53%;">STOP</button>
+<div>
+	<button id = "stop" class ="button-74" role ="button" style= "position: absolute; top: 70%; left:53%;">STOP</button>
+	<div class ="modal-content">
+		<span class="close">&times;</span>
+		<p>Some text in the Modal..</p>
+	</div>
+
+</div>
+
+
+
+
 
 {% endblock %}
 
@@ -18,10 +29,11 @@
 	var start = document.getElementById("start");
 	const timer = document.getElementById("timer");
 	const focusMinutes = 5;
-	
+
 	start.addEventListener("click",
 	function() {
 		// converting minutes into seconds
+		start.disable = true;
 		let time =  focusMinutes;
 		var CountDown = setInterval(function displayTimer() {
 			//getting mins from the total_seconds(time) - Calculating every second
@@ -39,6 +51,7 @@
 
 			if (time < 0)
 			{
+				start.disable = false;
 				document.getElementById("message").innerHTML = "done";
 				clearInterval(CountDown);
 			}
